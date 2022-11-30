@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Protfolio</title>
+</head>
+
+<body>
+    <nav class="navcontainer">
+        <div class="navbar">
+            <button class="navbar-toggler" type="button"
+                data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                    <div class="first"></div>
+                    <div class="second"></div>
+                    <div class="third"></div>
+                </span>
+            </button>
+            <div class="sidetoolbar" id="navbarToggleExternalContent">
+                <div class="profile">
+                    <div>
+                        <span id="open"></span>
+                        <label for="open">Open</label>
+                    </div>
+                    <div>
+                        <span id="saveTo"></span>
+                        <label for="saveTo">Save to...</label>
+                    </div>
+                    <div>
+                        <span id="exportImage"></span>
+                        <label for="exportImage">Export image</label>
+                    </div>
+                    <div>
+                        <span id="collaboration"></span>
+                        <label for="collaboration">Live collaboration</label>
+                    </div>
+                    <div>
+                        <span id="help"></span>
+                        <label for="help">help</label>
+                    </div>
+                    <div>
+                        <span id="resetCanvas"></span>
+                        <label for="resetCanvas">Reset canvas</label>
+                    </div>
+                </div>
+                <div class="social">
+                    <div>
+                        <span id="github"></span>
+                        <label for="github">Github</label>
+                    </div>
+                    <div>
+                        <span id="twitter"></span>
+                        <label for="twitter">Twitter</label>
+                    </div>
+                    <div>
+                        <span id="linkedIn"></span>
+                        <label for="linkedIn">LinkedIn</label>
+                    </div>
+                </div>
+                <div class="settings">
+                    <div class="sitemode">
+                        <span id="linkedIn"></span>
+                        <label for="linkedIn">LinkedIn</label>
+                    </div>
+                    <div class="language">
+                        <select id="langselection">
+                            <option value="Afrikaans">Afrikaans</option>
+                            <option value="Albanian">Albanian</option>
+                            <option value="Arabic">Arabic</option>
+                            <option value="Armenian">Armenian</option>
+                            <option value="Basque">Basque</option>
+                            <option value="Bengali">Bengali</option>
+                            <option value="Bulgarian">Bulgarian</option>
+                            <option value="Catalan">Catalan</option>
+                            <option value="Cambodian">Cambodian</option>
+                            <option value="Chinese (Mandarin)">Chinese (Mandarin)</option>
+                            <option value="Croatian">Croatian</option>
+                            <option value="Czech">Czech</option>
+                            <option value="Danish">Danish</option>
+                            <option value="Dutch">Dutch</option>
+                            <option selected value="English">English</option>
+                            <option value="Estonian">Estonian</option>
+                            <option value="Fiji">Fiji</option>
+                            <option value="Finnish">Finnish</option>
+                            <option value="French">French</option>
+                            <option value="Georgian">Georgian</option>
+                            <option value="German">German</option>
+                            <option value="Greek">Greek</option>
+                            <option value="Gujarati">Gujarati</option>
+                            <option value="Hebrew">Hebrew</option>
+                            <option value="Hindi">Hindi</option>
+                            <option value="Hungarian">Hungarian</option>
+                            <option value="Icelandic">Icelandic</option>
+                            <option value="Indonesian">Indonesian</option>
+                            <option value="Irish">Irish</option>
+                            <option value="Italian">Italian</option>
+                            <option value="Japanese">Japanese</option>
+                            <option value="Javanese">Javanese</option>
+                            <option value="Korean">Korean</option>
+                            <option value="Latin">Latin</option>
+                            <option value="Latvian">Latvian</option>
+                            <option value="Lithuanian">Lithuanian</option>
+                            <option value="Macedonian">Macedonian</option>
+                            <option value="Malay">Malay</option>
+                            <option value="Malayalam">Malayalam</option>
+                            <option value="Maltese">Maltese</option>
+                            <option value="Maori">Maori</option>
+                            <option value="Marathi">Marathi</option>
+                            <option value="Mongolian">Mongolian</option>
+                            <option value="Nepali">Nepali</option>
+                            <option value="Norwegian">Norwegian</option>
+                            <option value="Persian">Persian</option>
+                            <option value="Polish">Polish</option>
+                            <option value="Portuguese">Portuguese</option>
+                            <option value="Punjabi">Punjabi</option>
+                            <option value="Quechua">Quechua</option>
+                            <option value="Romanian">Romanian</option>
+                            <option value="Russian">Russian</option>
+                            <option value="Samoan">Samoan</option>
+                            <option value="Serbian">Serbian</option>
+                            <option value="Slovak">Slovak</option>
+                            <option value="Slovenian">Slovenian</option>
+                            <option value="Spanish">Spanish</option>
+                            <option value="Swahili">Swahili</option>
+                            <option value="Swedish ">Swedish </option>
+                            <option value="Tamil">Tamil</option>
+                            <option value="Tatar">Tatar</option>
+                            <option value="Telugu">Telugu</option>
+                            <option value="Thai">Thai</option>
+                            <option value="Tibetan">Tibetan</option>
+                            <option value="Tonga">Tonga</option>
+                            <option value="Turkish">Turkish</option>
+                            <option value="Ukrainian">Ukrainian</option>
+                            <option value="Urdu">Urdu</option>
+                            <option value="Uzbek">Uzbek</option>
+                            <option value="Vietnamese">Vietnamese</option>
+                            <option value="Welsh">Welsh</option>
+                            <option value="Xhosa">Xhosa</option>
+                          </select>
+                    </div>
+                    <div class="background">
+                        <button id="backgroundColor"></button>
+                        <input id="inputcolor" for="backgroundColor"></input>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="toolbar">
+            <div class="toolbar__left">
+                <div id="lock" class="tool">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="15"
+                        height="14" id="screenshot-3d2c5d25-7148-80fe-8001-a9ac1cb5140d" viewBox="-0 -0 15 14"
+                        style="-webkit-print-color-adjust: exact" fill="none" version="1.1">
+                        <g id="shape-3d2c5d25-7148-80fe-8001-a9ac1cb5140d" class="icon" rx="0" ry="0"
+                            style="fill: rgb(0, 0, 0)">
+                            <g id="shape-3d2c5d25-7148-80fe-8001-a9ac1cb73317">
+                                <g id="fills-3d2c5d25-7148-80fe-8001-a9ac1cb73317">
+                                    <path rx="0" ry="0"
+                                        d="M12.545,6.84L5.443,6.84L5.443,3.76C5.443,3.335,5.8,2.99,6.239,2.99L9.761,2.99C10.2,2.99,10.557,3.335,10.557,3.76L10.557,4.695C10.557,4.755,10.608,4.805,10.67,4.805L11.466,4.805C11.528,4.805,11.58,4.755,11.58,4.695L11.58,3.76C11.58,2.788,10.766,2,9.761,2L6.239,2C5.234,2,4.42,2.788,4.42,3.76L4.42,6.84L3.455,6.84C3.203,6.84,3,7.037,3,7.28L3,12.56C3,12.803,3.203,13,3.455,13L12.545,13C12.797,13,13,12.803,13,12.56L13,7.28C13,7.037,12.797,6.84,12.545,6.84ZZM11.977,12.01L4.023,12.01L4.023,7.83L11.977,7.83L11.977,12.01ZZM7.602,10.099L7.602,10.827C7.602,10.888,7.653,10.937,7.716,10.937L8.284,10.937C8.347,10.937,8.398,10.888,8.398,10.827L8.398,10.099C8.638,9.932,8.74,9.633,8.649,9.36C8.558,9.087,8.296,8.902,8,8.902C7.704,8.902,7.442,9.087,7.351,9.36C7.26,9.633,7.362,9.932,7.602,10.099ZZ"
+                                        style="fill: rgb(7, 7, 7); fill-opacity: 1" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <div class="tool" id="unlock">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="15" id="screenshot-3d2c5d25-7148-80fe-8001-a9ac1cb5140d" viewBox="-0 -0 16 15"
+                        style="-webkit-print-color-adjust: exact" fill="none" version="1.1">
+                        <g id="shape-3d2c5d25-7148-80fe-8001-a9ac1cb5140d" class="icon" rx="0" ry="0"
+                            style="fill: rgb(0, 0, 0)">
+                            <g id="shape-3d2c5d25-7148-80fe-8001-a9ac1cb73317">
+                                <g id="fills-3d2c5d25-7148-80fe-8001-a9ac1cb73317">
+                                    <path rx="0" ry="0"
+                                        d="M13.5,7.28L5.687,7.28L5.688,3.92C5.688,3.457,6.08,3.08,6.563,3.08L10.437,3.08C10.92,3.08,11.312,3.456,11.312,3.92L11.312,4.94C11.312,5.006,11.369,5.06,11.437,5.06L12.312,5.06C12.381,5.06,12.437,5.006,12.437,4.94L12.437,3.92C12.437,2.859,11.542,2,10.437,2L6.563,2C5.458,2,4.563,2.86,4.563,3.92L4.562,7.28L3.5,7.28C3.223,7.28,3,7.495,3,7.76L3,13.52C3,13.785,3.223,14,3.5,14L13.5,14C13.777,14,14,13.785,14,13.52L14,7.76C14,7.494,13.777,7.28,13.5,7.28ZZM12.875,12.92L4.125,12.92L4.125,8.36L12.875,8.36L12.875,12.92ZZM8.062,10.835L8.062,11.63C8.062,11.696,8.119,11.75,8.187,11.75L8.812,11.75C8.881,11.75,8.937,11.696,8.937,11.63L8.937,10.835C9.202,10.653,9.314,10.327,9.214,10.029C9.114,9.732,8.826,9.53,8.5,9.53C8.174,9.53,7.886,9.732,7.786,10.029C7.686,10.327,7.798,10.653,8.062,10.835ZZ"
+                                        style="fill: rgb(7, 7, 7); fill-opacity: 1" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+            <div class="toolbar__right">
+                <div id="default" class="tool"></div>
+                <div id="rect" class="tool">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                        <g style="mix-blend-mode: overlay" filter="url(#filter0_i_3_3)">
+                            <rect x="1" y="1" width="11" height="11" stroke="#1B1A1A" stroke-opacity="0.1"
+                                stroke-width="0.1" stroke-miterlimit="7.93624" />
+                        </g>
+                        <defs>
+                            <filter id="filter0_i_3_3" x="0.850006" y="0.850006" width="20.3" height="20.3"
+                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feMorphology radius="5" operator="erode" in="SourceAlpha"
+                                    result="effect1_innerShadow_3_3" />
+                                <feOffset dx="10" dy="10" />
+                                <feGaussianBlur stdDeviation="2" />
+                                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0" />
+                                <feBlend mode="normal" in2="shape" result="effect1_innerShadow_3_3" />
+                            </filter>
+                        </defs>
+                    </svg>
+                </div>
+                <div id="dimond" class="tool"></div>
+                <div id="circle" class="tool">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                        <circle cx="6.5" cy="6.5" r="6" stroke="#292828" />
+                    </svg>
+                </div>
+                <div id="arrow" class="tool">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none">
+                        <path
+                            d="M13.3536 4.35355C13.5488 4.15829 13.5488 3.84171 13.3536 3.64645L10.1716 0.464466C9.97631 0.269204 9.65973 0.269204 9.46447 0.464466C9.2692 0.659728 9.2692 0.976311 9.46447 1.17157L12.2929 4L9.46447 6.82843C9.2692 7.02369 9.2692 7.34027 9.46447 7.53553C9.65973 7.7308 9.97631 7.7308 10.1716 7.53553L13.3536 4.35355ZM0 4.5H13V3.5H0V4.5Z"
+                            fill="#2C2B2B" />
+                    </svg>
+                </div>
+                <div id="line" class="tool">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="2" viewBox="0 0 14 2" fill="none">
+                        <line x1="0.99432" y1="1" x2="13.9943" y2="1" stroke="black" />
+                    </svg>
+                </div>
+                <div id="pencil" class="tool">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M10.2978 5.74048L11.0316 5.06105C11.842 4.31056 11.8907 3.04516 11.1402 2.2347C10.3897 1.42424 9.12429 1.37562 8.31383 2.12611L7.5801 2.80555L10.2978 5.74048ZM9.56411 6.41992L6.84636 3.48498L3.91143 6.20273L6.62917 9.13767L9.56411 6.41992ZM6.16693 2.75125L6.90066 2.07181L7.6344 1.39237C8.85009 0.266648 10.7482 0.339577 11.8739 1.55527C12.9996 2.77096 12.9267 4.66905 11.711 5.79478L7.30861 9.8714L6.57488 10.5508L6.59198 10.5693L5.51853 10.8819L1.35142 12.0953L0.151267 12.4447L0.59179 11.2749L2.12135 7.21321L2.51536 6.1669L2.49826 6.14843L3.23199 5.46899L6.16693 2.75125ZM1.79195 10.9255L4.7589 10.0615L2.88098 8.03355L1.79195 10.9255Z"
+                            fill="black" />
+                    </svg>
+                </div>
+                <div id="text" class="tool"></div>
+                <div id="image" class="tool">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="15"
+                        height="14" id="screenshot-3d2c5d25-7148-80fe-8001-a9cded97d33f" viewBox="-0 -0 15 14"
+                        style="-webkit-print-color-adjust: exact" fill="none" version="1.1">
+                        <g id="shape-3d2c5d25-7148-80fe-8001-a9cded97d33f" rx="0" ry="0" style="fill: rgb(0, 0, 0)">
+                            <g id="shape-3d2c5d25-7148-80fe-8001-a9cded9901bf">
+                                <g id="fills-3d2c5d25-7148-80fe-8001-a9cded9901bf">
+                                    <path rx="0" ry="0"
+                                        d="M13.536,2L1.464,2C1.207,2,1,2.203,1,2.455L1,11.545C1,11.797,1.207,12,1.464,12L13.536,12C13.793,12,14,11.797,14,11.545L14,2.455C14,2.203,13.793,2,13.536,2ZZM12.955,10.977L2.045,10.977L2.045,10.411L4.054,8.077L6.232,10.605L9.62,6.673L12.955,10.545L12.955,10.977ZZM12.955,9.134L9.708,5.364C9.662,5.31,9.578,5.31,9.531,5.364L6.232,9.193L4.143,6.768C4.096,6.714,4.012,6.714,3.966,6.768L2.045,8.999L2.045,3.023L12.955,3.023L12.955,9.134ZZ"
+                                        style="fill: rgb(51, 51, 51)" />
+                                </g>
+                            </g>
+                            <g id="shape-3d2c5d25-7148-80fe-8001-a9cded99abf0">
+                                <g id="fills-3d2c5d25-7148-80fe-8001-a9cded99abf0">
+                                    <path rx="0" ry="0"
+                                        d="M6.222,10.654L4.026,8.304L2,10.473L2,11L13,11L13,10.599L9.637,7Z"
+                                        style="fill: rgb(230, 230, 230)" />
+                                </g>
+                            </g>
+                            <g id="shape-3d2c5d25-7148-80fe-8001-a9cded9a4d9a">
+                                <g id="fills-3d2c5d25-7148-80fe-8001-a9cded9a4d9a">
+                                    <path rx="0" ry="0"
+                                        d="M2,8.811L3.937,6.642C3.984,6.59,4.068,6.59,4.115,6.642L6.222,9L9.548,5.276C9.595,5.224,9.68,5.224,9.726,5.276L13,8.942L13,3L2,3L2,8.811ZZM4.457,3.663C5.168,3.663,5.745,4.207,5.745,4.878C5.745,5.55,5.168,6.094,4.457,6.094C3.747,6.094,3.17,5.55,3.17,4.878C3.17,4.207,3.747,3.663,4.457,3.663ZZ"
+                                        style="fill: rgb(230, 230, 230)" />
+                                </g>
+                            </g>
+                            <g id="shape-3d2c5d25-7148-80fe-8001-a9cded9a9062">
+                                <g id="fills-3d2c5d25-7148-80fe-8001-a9cded9a9062">
+                                    <path rx="0" ry="0"
+                                        d="M4,5.5C4,5.776,4.224,6,4.5,6C4.776,6,5,5.776,5,5.5C5,5.224,4.776,5,4.5,5C4.224,5,4,5.224,4,5.5ZZ"
+                                        style="fill: rgb(230, 230, 230)" />
+                                </g>
+                            </g>
+                            <g id="shape-3d2c5d25-7148-80fe-8001-a9cded9b3ad0">
+                                <g id="fills-3d2c5d25-7148-80fe-8001-a9cded9b3ad0">
+                                    <path rx="0" ry="0"
+                                        d="M4.5,6C5.328,6,6,5.552,6,5C6,4.448,5.328,4,4.5,4C3.672,4,3,4.448,3,5C3,5.552,3.672,6,4.5,6ZZM4.5,4.682C4.764,4.682,4.977,4.824,4.977,5C4.977,5.176,4.764,5.318,4.5,5.318C4.236,5.318,4.023,5.176,4.023,5C4.023,4.824,4.236,4.682,4.5,4.682ZZ"
+                                        style="fill: rgb(51, 51, 51)" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <div id="eraser" class="tool">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="40"
+                        height="37" id="screenshot-75652e67-c3b6-80bc-8001-a9d3a32a96f6" viewBox="-0.5 -0.5 40 37"
+                        style="-webkit-print-color-adjust: exact" fill="none" version="1.1">
+                        <g id="shape-75652e67-c3b6-80bc-8001-a9d3a32a96f6" rx="0" ry="0">
+                            <g id="shape-75652e67-c3b6-80bc-8001-a9d30719b81a" rx="0" ry="0">
+                                <g id="shape-75652e67-c3b6-80bc-8001-a9cff39e7952">
+                                    <g id="fills-75652e67-c3b6-80bc-8001-a9cff39e7952">
+                                        <rect rx="0" ry="0" x="3.2788505640057934" y="0.798084273342937"
+                                            transform="matrix(0.705427,0.705427,-0.705427,0.705427,7,-2.875981)"
+                                            width="7.442298871988401" height="12.403831453314103" />
+                                    </g>
+                                    <g id="strokes-75652e67-c3b6-80bc-8001-a9cff39e7952">
+                                        <g class="stroke-shape">
+                                            <rect rx="0" ry="0" x="3.2788505640057934" y="0.798084273342937"
+                                                transform="matrix(0.705427,0.705427,-0.705427,0.705427,7,-2.875981)"
+                                                width="7.442298871988401" height="12.403831453314103" style="
+                            fill: none;
+                            stroke-width: 1;
+                            stroke: rgb(56, 56, 56);
+                            stroke-opacity: 1;
+                          " />
+                                        </g>
+                                    </g>
+                                </g>
+                                <g id="shape-75652e67-c3b6-80bc-8001-a9d0d2a3ad74">
+                                    <g id="fills-75652e67-c3b6-80bc-8001-a9d0d2a3ad74">
+                                        <path rx="0" ry="0" d="M6,3.939L11.132,9.163" />
+                                    </g>
+                                    <g id="strokes-75652e67-c3b6-80bc-8001-a9d0d2a3ad74">
+                                        <g class="stroke-shape">
+                                            <path rx="0" ry="0" d="M6,3.939L11.132,9.163" style="
+                            fill: none;
+                            stroke-width: 1;
+                            stroke: rgb(33, 33, 33);
+                            stroke-opacity: 1;
+                          " />
+                                        </g>
+                                    </g>
+                                </g>
+                                <g id="shape-75652e67-c3b6-80bc-8001-a9d228b11b75">
+                                    <g id="fills-75652e67-c3b6-80bc-8001-a9d228b11b75">
+                                        <path rx="0" ry="0" d="M4,14.001L13,14" />
+                                    </g>
+                                    <g id="strokes-75652e67-c3b6-80bc-8001-a9d228b11b75">
+                                        <g class="stroke-shape">
+                                            <path rx="0" ry="0" d="M4,14.001L13,14" style="
+                            fill: none;
+                            stroke-width: 1;
+                            stroke: rgb(0, 0, 0);
+                            stroke-opacity: 1;
+                          " />
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- 
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="30" viewBox="0 0 12 30" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10 8V5C10 2.79086 8.20914 1 6 1C3.79086 1 2 2.79086 2 5V8H10ZM11 8V9V19V19.5H11.1962L11 19.8964V20H10.9487L10.7013 20.5L6.55788 28.8727L6 30L5.44212 28.8727L1.29872 20.5L1.05128 20H1V19.8964L0.803848 19.5H1V19V9V8V5C1 2.23858 3.23858 0 6 0C8.76142 0 11 2.23858 11 5V8ZM2 9V19H10V9H2ZM6 27.7454L9.58553 20.5H2.41447L6 27.7454Z" fill="black"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="7" height="16" viewBox="0 0 7 16" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.97482 4V3C5.97482 1.89543 5.07939 1 3.97482 1C2.87025 1 1.97482 1.89543 1.97482 3V4H5.97482ZM5.97482 5H1.97482V9H5.97482V5ZM0.974823 5V4V3C0.974823 1.34315 2.31797 0 3.97482 0C5.63168 0 6.97482 1.34315 6.97482 3V9V10H7L6.5 11L4.55902 14.882L4 16L3.44098 14.882L1.5 11L1 10H0.974823V9V5ZM4 13.7639L5.38197 11H2.61803L4 13.7639Z" fill="black"/>
+            </svg> -->
+
+            <!-- <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="16" height="15" id="screenshot-3d2c5d25-7148-80fe-8001-a9abdb3e9333" viewBox="-0 -0 16 15" style="-webkit-print-color-adjust: exact;" fill="none" version="1.1"><g id="shape-3d2c5d25-7148-80fe-8001-a9abdb3e9333" class="icon" rx="0" ry="0" style="fill: rgb(0, 0, 0);"><g id="shape-3d2c5d25-7148-80fe-8001-a9abdb441853"><g id="fills-3d2c5d25-7148-80fe-8001-a9abdb441853"><path rx="0" ry="0" d="M15.5,7.28L14.437,7.28L14.437,3.92C14.438,2.859,13.542,2,12.438,2L8.563,2C7.458,2,6.563,2.859,6.563,3.92L6.563,7.28L5.5,7.28C5.223,7.28,5,7.494,5,7.76L5,13.52C5,13.785,5.223,14,5.5,14L15.5,14C15.777,14,16,13.785,16,13.52L16,7.76C16,7.494,15.777,7.28,15.5,7.28ZL15.5,7.28ZM7.688,3.92C7.688,3.456,8.08,3.08,8.563,3.08L12.438,3.08C12.92,3.08,13.313,3.456,13.313,3.92L13.312,7.28L7.688,7.28L7.688,3.92ZL7.688,3.92ZM14.875,12.92L6.125,12.92L6.125,8.36L14.875,8.36L14.875,12.92ZL14.875,12.92ZM10.062,10.835L10.062,11.63C10.062,11.696,10.119,11.75,10.187,11.75L10.812,11.75C10.881,11.75,10.937,11.696,10.937,11.63L10.937,10.835C11.202,10.653,11.314,10.327,11.214,10.029C11.114,9.732,10.826,9.53,10.5,9.53C10.174,9.53,9.886,9.732,9.786,10.029C9.686,10.327,9.798,10.653,10.062,10.835ZL10.062,10.835Z" style="fill: rgb(7, 7, 7); fill-opacity: 1;"/></g></g></g></svg> -->
+            <!-- <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="12" height="12" id="screenshot-3d2c5d25-7148-80fe-8001-a9ac1cb73317" viewBox="-1723 -226 12 12" style="-webkit-print-color-adjust: exact;" fill="none" version="1.1"><g id="shape-3d2c5d25-7148-80fe-8001-a9ac1cb73317"><g id="fills-3d2c5d25-7148-80fe-8001-a9ac1cb73317"><path rx="0" ry="0" d="M-1711.545,-220.72L-1720.068,-220.72L-1720.068,-224.08C-1720.068,-224.543,-1719.64,-224.92,-1719.114,-224.92L-1714.886,-224.92C-1714.36,-224.92,-1713.932,-224.543,-1713.932,-224.08L-1713.932,-223.06C-1713.932,-222.994,-1713.87,-222.94,-1713.795,-222.94L-1712.841,-222.94C-1712.766,-222.94,-1712.705,-222.994,-1712.705,-223.06L-1712.705,-224.08C-1712.705,-225.14,-1713.681,-226,-1714.886,-226L-1719.114,-226C-1720.319,-226,-1721.295,-225.14,-1721.295,-224.08L-1721.295,-220.72L-1722.455,-220.72C-1722.756,-220.72,-1723,-220.505,-1723,-220.24L-1723,-214.48C-1723,-214.215,-1722.756,-214,-1722.455,-214L-1711.545,-214C-1711.244,-214,-1711,-214.215,-1711,-214.48L-1711,-220.24C-1711,-220.505,-1711.244,-220.72,-1711.545,-220.72ZZM-1712.227,-215.08L-1721.773,-215.08L-1721.773,-219.64L-1712.227,-219.64L-1712.227,-215.08ZZM-1717.477,-217.165L-1717.477,-216.37C-1717.477,-216.304,-1717.416,-216.25,-1717.341,-216.25L-1716.659,-216.25C-1716.584,-216.25,-1716.523,-216.304,-1716.523,-216.37L-1716.523,-217.165C-1716.234,-217.347,-1716.112,-217.673,-1716.221,-217.971C-1716.33,-218.268,-1716.645,-218.47,-1717,-218.47C-1717.355,-218.47,-1717.67,-218.268,-1717.779,-217.971C-1717.888,-217.673,-1717.766,-217.347,-1717.477,-217.165ZZ" style="fill: rgb(7, 7, 7); fill-opacity: 1;"/></g></g></svg> -->
+
+            <!-- <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="15" height="14" id="screenshot-3d2c5d25-7148-80fe-8001-a9cded97d33f" viewBox="-0 -0 15 14" style="-webkit-print-color-adjust: exact;" fill="none" version="1.1"><g id="shape-3d2c5d25-7148-80fe-8001-a9cded97d33f" rx="0" ry="0" style="fill: rgb(0, 0, 0);"><g id="shape-3d2c5d25-7148-80fe-8001-a9cded9901bf"><g id="fills-3d2c5d25-7148-80fe-8001-a9cded9901bf"><path rx="0" ry="0" d="M13.536,2L1.464,2C1.207,2,1,2.203,1,2.455L1,11.545C1,11.797,1.207,12,1.464,12L13.536,12C13.793,12,14,11.797,14,11.545L14,2.455C14,2.203,13.793,2,13.536,2ZZM12.955,10.977L2.045,10.977L2.045,10.411L4.054,8.077L6.232,10.605L9.62,6.673L12.955,10.545L12.955,10.977ZZM12.955,9.134L9.708,5.364C9.662,5.31,9.578,5.31,9.531,5.364L6.232,9.193L4.143,6.768C4.096,6.714,4.012,6.714,3.966,6.768L2.045,8.999L2.045,3.023L12.955,3.023L12.955,9.134ZZ" style="fill: rgb(51, 51, 51);"/></g></g><g id="shape-3d2c5d25-7148-80fe-8001-a9cded99abf0"><g id="fills-3d2c5d25-7148-80fe-8001-a9cded99abf0"><path rx="0" ry="0" d="M6.222,10.654L4.026,8.304L2,10.473L2,11L13,11L13,10.599L9.637,7Z" style="fill: rgb(230, 230, 230);"/></g></g><g id="shape-3d2c5d25-7148-80fe-8001-a9cded9a4d9a"><g id="fills-3d2c5d25-7148-80fe-8001-a9cded9a4d9a"><path rx="0" ry="0" d="M2,8.811L3.937,6.642C3.984,6.59,4.068,6.59,4.115,6.642L6.222,9L9.548,5.276C9.595,5.224,9.68,5.224,9.726,5.276L13,8.942L13,3L2,3L2,8.811ZZM4.457,3.663C5.168,3.663,5.745,4.207,5.745,4.878C5.745,5.55,5.168,6.094,4.457,6.094C3.747,6.094,3.17,5.55,3.17,4.878C3.17,4.207,3.747,3.663,4.457,3.663ZZ" style="fill: rgb(230, 230, 230);"/></g></g><g id="shape-3d2c5d25-7148-80fe-8001-a9cded9a9062"><g id="fills-3d2c5d25-7148-80fe-8001-a9cded9a9062"><path rx="0" ry="0" d="M4,5.5C4,5.776,4.224,6,4.5,6C4.776,6,5,5.776,5,5.5C5,5.224,4.776,5,4.5,5C4.224,5,4,5.224,4,5.5ZZ" style="fill: rgb(230, 230, 230);"/></g></g><g id="shape-3d2c5d25-7148-80fe-8001-a9cded9b3ad0"><g id="fills-3d2c5d25-7148-80fe-8001-a9cded9b3ad0"><path rx="0" ry="0" d="M4.5,6C5.328,6,6,5.552,6,5C6,4.448,5.328,4,4.5,4C3.672,4,3,4.448,3,5C3,5.552,3.672,6,4.5,6ZZM4.5,4.682C4.764,4.682,4.977,4.824,4.977,5C4.977,5.176,4.764,5.318,4.5,5.318C4.236,5.318,4.023,5.176,4.023,5C4.023,4.824,4.236,4.682,4.5,4.682ZZ" style="fill: rgb(51, 51, 51);"/></g></g></g></svg>
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="40" height="37" id="screenshot-75652e67-c3b6-80bc-8001-a9d3a32a96f6" viewBox="-0.5 -0.5 40 37" style="-webkit-print-color-adjust: exact;" fill="none" version="1.1"><g id="shape-75652e67-c3b6-80bc-8001-a9d3a32a96f6" rx="0" ry="0"><g id="shape-75652e67-c3b6-80bc-8001-a9d30719b81a" rx="0" ry="0"><g id="shape-75652e67-c3b6-80bc-8001-a9cff39e7952"><g id="fills-75652e67-c3b6-80bc-8001-a9cff39e7952"><rect rx="0" ry="0" x="3.2788505640057934" y="0.798084273342937" transform="matrix(0.705427,0.705427,-0.705427,0.705427,7,-2.875981)" width="7.442298871988401" height="12.403831453314103"/></g><g id="strokes-75652e67-c3b6-80bc-8001-a9cff39e7952"><g class="stroke-shape"><rect rx="0" ry="0" x="3.2788505640057934" y="0.798084273342937" transform="matrix(0.705427,0.705427,-0.705427,0.705427,7,-2.875981)" width="7.442298871988401" height="12.403831453314103" style="fill: none; stroke-width: 1; stroke: rgb(56, 56, 56); stroke-opacity: 1;"/></g></g></g><g id="shape-75652e67-c3b6-80bc-8001-a9d0d2a3ad74"><g id="fills-75652e67-c3b6-80bc-8001-a9d0d2a3ad74"><path rx="0" ry="0" d="M6,3.939L11.132,9.163"/></g><g id="strokes-75652e67-c3b6-80bc-8001-a9d0d2a3ad74"><g class="stroke-shape"><path rx="0" ry="0" d="M6,3.939L11.132,9.163" style="fill: none; stroke-width: 1; stroke: rgb(33, 33, 33); stroke-opacity: 1;"/></g></g></g><g id="shape-75652e67-c3b6-80bc-8001-a9d228b11b75"><g id="fills-75652e67-c3b6-80bc-8001-a9d228b11b75"><path rx="0" ry="0" d="M4,14.001L13,14"/></g><g id="strokes-75652e67-c3b6-80bc-8001-a9d228b11b75"><g class="stroke-shape"><path rx="0" ry="0" d="M4,14.001L13,14" style="fill: none; stroke-width: 1; stroke: rgb(0, 0, 0); stroke-opacity: 1;"/></g></g></g></g></g></svg> -->
+        </div>
+        <div class="avatar">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                    <div class="first"></div>
+                    <div class="second"></div>
+                    <div class="third"></div>
+                </span>
+            </button>
+        </div>
+    </nav>
+    <main class="maincontainer"></main>
+    <footer class="footercontainer">
+        <div class="footer__action">
+            <div class="footer__action-zoom">
+                <button class="increase-zoom" type="button" data-toggle="collapse"
+                    data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span> + </span>
+                </button>
+                <span> 100% </span>
+                <button class="decrease-zoom" type="button" data-toggle="collapse"
+                    data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span> - </span>
+                </button>
+            </div>
+            <div class="footer__action-navigation">
+                <button class="prev-page" type="button" data-toggle="collapse"
+                    data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span> </span>
+                </button>
+                <button class="next-page" type="button" data-toggle="collapse"
+                    data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span> </span>
+                </button>
+            </div>
+        </div>
+        <div class="footer__misc"></div>
+    </footer>
+</body>
+
+</html>
