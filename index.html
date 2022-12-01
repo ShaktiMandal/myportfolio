@@ -26,6 +26,7 @@
                     <div>
                         <span id="open"></span>
                         <label for="open">Open</label>
+                        <label for="open" id="open" class="shortcut__text">Ctrl+O</label>
                     </div>
                     <div>
                         <span id="saveTo"></span>
@@ -33,7 +34,8 @@
                     </div>
                     <div>
                         <span id="exportImage"></span>
-                        <label for="exportImage">Export image</label>
+                        <label for="exportImage">Export image...</label>
+                        <label for="exportImage" id="exportImage" class="shortcut__text">Ctrl+Shift+E</label>
                     </div>
                     <div>
                         <span id="collaboration"></span>
@@ -42,6 +44,8 @@
                     <div>
                         <span id="help"></span>
                         <label for="help">help</label>
+                        <label for="help" id="help" class="shortcut__text">?</label>
+                        
                     </div>
                     <div>
                         <span id="resetCanvas"></span>
@@ -64,11 +68,12 @@
                 </div>
                 <div class="settings">
                     <div class="sitemode">
-                        <span id="linkedIn"></span>
-                        <label for="linkedIn">LinkedIn</label>
+                        <span id="modeicon"></span>
+                        <label for="modeicon" id="modetext">Dark mode</label>
+                        <label for="modeicon" id="modeshotcut" class="shortcut__text">Shift+Alt+D</label>
                     </div>
                     <div class="language">
-                        <select id="langselection">
+                        <select id="langselection" class="language__selection">
                             <option value="Afrikaans">Afrikaans</option>
                             <option value="Albanian">Albanian</option>
                             <option value="Arabic">Arabic</option>
@@ -187,7 +192,27 @@
                 </div>
             </div>
             <div class="toolbar__right">
-                <div id="default" class="tool"></div>
+                <div id="default" class="tool">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                        id="screenshot-329ee403-f23b-80f8-8001-ad5d59d80888" viewBox="2168.5 -2547.5 14 14"
+                        style="-webkit-print-color-adjust: exact;" fill="none" version="1.1">
+                        <g id="shape-329ee403-f23b-80f8-8001-ad5d59d80888">
+                            <g id="fills-329ee403-f23b-80f8-8001-ad5d59d80888">
+                                <path rx="0" ry="0"
+                                    d="M2169,-2547L2174.317,-2534L2174.317,-2541.808L2182,-2541.808L2169,-2547ZM2174.317,-2541.808L2182,-2534L2182,-2534"
+                                    style="fill: rgb(91, 87, 209); fill-opacity: 1;" />
+                            </g>
+                            <g id="strokes-329ee403-f23b-80f8-8001-ad5d59d80888">
+                                <g class="stroke-shape">
+                                    <path rx="0" ry="0"
+                                        d="M2169,-2547L2174.317,-2534L2174.317,-2541.808L2182,-2541.808L2169,-2547ZM2174.317,-2541.808L2182,-2534L2182,-2534"
+                                        style="fill: none; stroke-width: 1; stroke: rgb(91, 87, 209); stroke-opacity: 1;" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    <span>1</span>
+                </div>
                 <div id="rect" class="tool">
                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
                         <g style="mix-blend-mode: overlay" filter="url(#filter0_i_3_3)">
@@ -211,12 +236,13 @@
                             </filter>
                         </defs>
                     </svg>
+                    <span>2</span>
                 </div>
-                <div id="dimond" class="tool"></div>
                 <div id="circle" class="tool">
                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
                         <circle cx="6.5" cy="6.5" r="6" stroke="#292828" />
                     </svg>
+                    <span>3</span>
                 </div>
                 <div id="arrow" class="tool">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none">
@@ -224,11 +250,13 @@
                             d="M13.3536 4.35355C13.5488 4.15829 13.5488 3.84171 13.3536 3.64645L10.1716 0.464466C9.97631 0.269204 9.65973 0.269204 9.46447 0.464466C9.2692 0.659728 9.2692 0.976311 9.46447 1.17157L12.2929 4L9.46447 6.82843C9.2692 7.02369 9.2692 7.34027 9.46447 7.53553C9.65973 7.7308 9.97631 7.7308 10.1716 7.53553L13.3536 4.35355ZM0 4.5H13V3.5H0V4.5Z"
                             fill="#2C2B2B" />
                     </svg>
+                    <span>4</span>
                 </div>
                 <div id="line" class="tool">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="2" viewBox="0 0 14 2" fill="none">
                         <line x1="0.99432" y1="1" x2="13.9943" y2="1" stroke="black" />
                     </svg>
+                    <span>5</span>
                 </div>
                 <div id="pencil" class="tool">
                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
@@ -236,53 +264,110 @@
                             d="M10.2978 5.74048L11.0316 5.06105C11.842 4.31056 11.8907 3.04516 11.1402 2.2347C10.3897 1.42424 9.12429 1.37562 8.31383 2.12611L7.5801 2.80555L10.2978 5.74048ZM9.56411 6.41992L6.84636 3.48498L3.91143 6.20273L6.62917 9.13767L9.56411 6.41992ZM6.16693 2.75125L6.90066 2.07181L7.6344 1.39237C8.85009 0.266648 10.7482 0.339577 11.8739 1.55527C12.9996 2.77096 12.9267 4.66905 11.711 5.79478L7.30861 9.8714L6.57488 10.5508L6.59198 10.5693L5.51853 10.8819L1.35142 12.0953L0.151267 12.4447L0.59179 11.2749L2.12135 7.21321L2.51536 6.1669L2.49826 6.14843L3.23199 5.46899L6.16693 2.75125ZM1.79195 10.9255L4.7589 10.0615L2.88098 8.03355L1.79195 10.9255Z"
                             fill="black" />
                     </svg>
+                    <span>6</span>
                 </div>
-                <div id="text" class="tool"></div>
-                <div id="image" class="tool">
-                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="15"
-                        height="14" id="screenshot-3d2c5d25-7148-80fe-8001-a9cded97d33f" viewBox="-0 -0 15 14"
-                        style="-webkit-print-color-adjust: exact" fill="none" version="1.1">
-                        <g id="shape-3d2c5d25-7148-80fe-8001-a9cded97d33f" rx="0" ry="0" style="fill: rgb(0, 0, 0)">
-                            <g id="shape-3d2c5d25-7148-80fe-8001-a9cded9901bf">
-                                <g id="fills-3d2c5d25-7148-80fe-8001-a9cded9901bf">
+                <div id="text" class="tool">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="15" height="18"
+                        id="screenshot-329ee403-f23b-80f8-8001-ad70e24346de" viewBox="-0 -0 15 18"
+                        style="-webkit-print-color-adjust: exact;" fill="none" version="1.1">
+                        <g id="shape-329ee403-f23b-80f8-8001-ad70e24346de" class="icon" rx="0" ry="0" style="fill: rgb(0, 0, 0);">
+                            <g id="shape-329ee403-f23b-80f8-8001-ad70e2449d81">
+                                <g id="fills-329ee403-f23b-80f8-8001-ad70e2449d81">
                                     <path rx="0" ry="0"
-                                        d="M13.536,2L1.464,2C1.207,2,1,2.203,1,2.455L1,11.545C1,11.797,1.207,12,1.464,12L13.536,12C13.793,12,14,11.797,14,11.545L14,2.455C14,2.203,13.793,2,13.536,2ZZM12.955,10.977L2.045,10.977L2.045,10.411L4.054,8.077L6.232,10.605L9.62,6.673L12.955,10.545L12.955,10.977ZZM12.955,9.134L9.708,5.364C9.662,5.31,9.578,5.31,9.531,5.364L6.232,9.193L4.143,6.768C4.096,6.714,4.012,6.714,3.966,6.768L2.045,8.999L2.045,3.023L12.955,3.023L12.955,9.134ZZ"
-                                        style="fill: rgb(51, 51, 51)" />
-                                </g>
-                            </g>
-                            <g id="shape-3d2c5d25-7148-80fe-8001-a9cded99abf0">
-                                <g id="fills-3d2c5d25-7148-80fe-8001-a9cded99abf0">
-                                    <path rx="0" ry="0"
-                                        d="M6.222,10.654L4.026,8.304L2,10.473L2,11L13,11L13,10.599L9.637,7Z"
-                                        style="fill: rgb(230, 230, 230)" />
-                                </g>
-                            </g>
-                            <g id="shape-3d2c5d25-7148-80fe-8001-a9cded9a4d9a">
-                                <g id="fills-3d2c5d25-7148-80fe-8001-a9cded9a4d9a">
-                                    <path rx="0" ry="0"
-                                        d="M2,8.811L3.937,6.642C3.984,6.59,4.068,6.59,4.115,6.642L6.222,9L9.548,5.276C9.595,5.224,9.68,5.224,9.726,5.276L13,8.942L13,3L2,3L2,8.811ZZM4.457,3.663C5.168,3.663,5.745,4.207,5.745,4.878C5.745,5.55,5.168,6.094,4.457,6.094C3.747,6.094,3.17,5.55,3.17,4.878C3.17,4.207,3.747,3.663,4.457,3.663ZZ"
-                                        style="fill: rgb(230, 230, 230)" />
-                                </g>
-                            </g>
-                            <g id="shape-3d2c5d25-7148-80fe-8001-a9cded9a9062">
-                                <g id="fills-3d2c5d25-7148-80fe-8001-a9cded9a9062">
-                                    <path rx="0" ry="0"
-                                        d="M4,5.5C4,5.776,4.224,6,4.5,6C4.776,6,5,5.776,5,5.5C5,5.224,4.776,5,4.5,5C4.224,5,4,5.224,4,5.5ZZ"
-                                        style="fill: rgb(230, 230, 230)" />
-                                </g>
-                            </g>
-                            <g id="shape-3d2c5d25-7148-80fe-8001-a9cded9b3ad0">
-                                <g id="fills-3d2c5d25-7148-80fe-8001-a9cded9b3ad0">
-                                    <path rx="0" ry="0"
-                                        d="M4.5,6C5.328,6,6,5.552,6,5C6,4.448,5.328,4,4.5,4C3.672,4,3,4.448,3,5C3,5.552,3.672,6,4.5,6ZZM4.5,4.682C4.764,4.682,4.977,4.824,4.977,5C4.977,5.176,4.764,5.318,4.5,5.318C4.236,5.318,4.023,5.176,4.023,5C4.023,4.824,4.236,4.682,4.5,4.682ZZ"
-                                        style="fill: rgb(51, 51, 51)" />
+                                        d="M13.88,14.32L2.12,14.32C2.054,14.32,2,14.383,2,14.46L2,15.86C2,15.937,2.054,16,2.12,16L13.88,16C13.946,16,14,15.937,14,15.86L14,14.46C14,14.383,13.946,14.32,13.88,14.32ZZM4.126,12.92L5.401,12.92C5.464,12.92,5.521,12.873,5.54,12.801L6.346,9.896L9.634,9.896L10.432,12.801C10.451,12.871,10.507,12.92,10.571,12.92L11.908,12.92C11.924,12.92,11.941,12.917,11.956,12.911C11.992,12.897,12.022,12.865,12.039,12.825C12.056,12.784,12.058,12.737,12.046,12.694L8.924,2.116C8.903,2.047,8.848,2.001,8.786,2L7.251,2C7.188,2,7.133,2.045,7.113,2.115L3.988,12.694C3.982,12.712,3.98,12.731,3.98,12.75C3.979,12.843,4.045,12.92,4.126,12.92ZZM7.964,3.888L7.964,3.888ZL9.282,8.505L6.693,8.505L7.964,3.888ZZ" />
                                 </g>
                             </g>
                         </g>
                     </svg>
+                    <span>7</span>
+                </div>
+                <div id="image" class="tool">
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="15" height="18"
+                    id="screenshot-329ee403-f23b-80f8-8001-ad6365b69604" viewBox="-0 -0 18 15"
+                    style="-webkit-print-color-adjust: exact;" fill="none" version="1.1">
+                    <g id="shape-329ee403-f23b-80f8-8001-ad6365b69604" rx="0" ry="0" style="fill: rgb(0, 0, 0);">
+                        <g id="shape-329ee403-f23b-80f8-8001-ad6365b83e54">
+                            <g id="fills-329ee403-f23b-80f8-8001-ad6365b83e54">
+                                <path rx="0" ry="0"
+                                    d="M16.429,2L1.571,2C1.255,2,1,2.203,1,2.455L1,11.545C1,11.797,1.255,12,1.571,12L16.429,12C16.745,12,17,11.797,17,11.545L17,2.455C17,2.203,16.745,2,16.429,2ZZM15.714,10.977L2.286,10.977L2.286,10.411L4.759,8.077L7.439,10.605L11.609,6.673L15.714,10.545L15.714,10.977ZZM15.714,9.134L11.718,5.364C11.661,5.31,11.557,5.31,11.5,5.364L7.439,9.193L4.868,6.768C4.811,6.714,4.707,6.714,4.65,6.768L2.286,8.999L2.286,3.023L15.714,3.023L15.714,9.134ZZ"
+                                    style="fill: rgb(51, 51, 51);" />
+                            </g>
+                        </g>
+                        <g id="shape-329ee403-f23b-80f8-8001-ad6365b88cf1">
+                            <g id="fills-329ee403-f23b-80f8-8001-ad6365b88cf1">
+                                <path rx="0" ry="0" d="M6.989,10.654L4.394,8.304L2,10.473L2,11L15,11L15,10.599L11.026,7Z"
+                                    style="fill: rgb(255, 255, 255); fill-opacity: 1;" />
+                            </g>
+                        </g>
+                        <g id="shape-329ee403-f23b-80f8-8001-ad6365b937ee">
+                            <g id="fills-329ee403-f23b-80f8-8001-ad6365b937ee">
+                                <path rx="0" ry="0"
+                                    d="M2,8.811L4.289,6.642C4.344,6.59,4.444,6.59,4.5,6.642L6.989,9L10.92,5.276C10.976,5.224,11.076,5.224,11.131,5.276L15,8.942L15,3L2,3L2,8.811ZZM4.904,3.663C5.744,3.663,6.426,4.207,6.426,4.878C6.426,5.55,5.744,6.094,4.904,6.094C4.064,6.094,3.383,5.55,3.383,4.878C3.383,4.207,4.064,3.663,4.904,3.663ZZ"
+                                    style="fill: rgb(255, 255, 255); fill-opacity: 1;" />
+                            </g>
+                        </g>
+                        <g id="shape-329ee403-f23b-80f8-8001-ad6365b96aed">
+                            <g id="fills-329ee403-f23b-80f8-8001-ad6365b96aed">
+                                <path rx="0" ry="0"
+                                    d="M5,5.5C5,5.776,5.224,6,5.5,6C5.776,6,6,5.776,6,5.5C6,5.224,5.776,5,5.5,5C5.224,5,5,5.224,5,5.5ZZ"
+                                    style="fill: rgb(255, 255, 255); fill-opacity: 1;" />
+                            </g>
+                        </g>
+                        <g id="shape-329ee403-f23b-80f8-8001-ad6365b9e703">
+                            <g id="fills-329ee403-f23b-80f8-8001-ad6365b9e703">
+                                <path rx="0" ry="0"
+                                    d="M6,7C7.105,7,8,6.328,8,5.5C8,4.672,7.105,4,6,4C4.895,4,4,4.672,4,5.5C4,6.328,4.895,7,6,7ZZM6,5.023C6.352,5.023,6.636,5.236,6.636,5.5C6.636,5.764,6.352,5.977,6,5.977C5.648,5.977,5.364,5.764,5.364,5.5C5.364,5.236,5.648,5.023,6,5.023ZZ"
+                                    style="fill: rgb(51, 51, 51);" />
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+                <span>8</span>
                 </div>
                 <div id="eraser" class="tool">
-                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="40"
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="14.981" height="15.403"
+                        id="screenshot-329ee403-f23b-80f8-8001-ad68dd52b39d" viewBox="-0.542 -0.372 14.981 15.403"
+                        style="-webkit-print-color-adjust: exact;" fill="none" version="1.1">
+                        <g id="shape-329ee403-f23b-80f8-8001-ad68dd52b39d" rx="0" ry="0">
+                            <g id="shape-329ee403-f23b-80f8-8001-ad66806993c4">
+                                <g id="fills-329ee403-f23b-80f8-8001-ad66806993c4">
+                                    <path rx="0" ry="0"
+                                        d="M-0.042,8.289C3.141,12.872,3.247,13.024,3.247,13.024L13.939,4.863L10.649,0.128L6.452,3.331L-0.042,8.289Z" />
+                                </g>
+                                <g id="strokes-329ee403-f23b-80f8-8001-ad66806993c4">
+                                    <g class="stroke-shape">
+                                        <path rx="0" ry="0"
+                                            d="M-0.042,8.289C3.141,12.872,3.247,13.024,3.247,13.024L13.939,4.863L10.649,0.128L6.452,3.331L-0.042,8.289Z"
+                                            style="fill: none; stroke-width: 1; stroke: rgb(0, 0, 0); stroke-opacity: 1;" />
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="shape-329ee403-f23b-80f8-8001-ad66b85ea820">
+                                <g id="fills-329ee403-f23b-80f8-8001-ad66b85ea820">
+                                    <path rx="0" ry="0" d="M3.281,13.025C9.781,13.256,9.649,13.251,9.649,13.251L3.281,13.025Z" />
+                                </g>
+                                <g id="strokes-329ee403-f23b-80f8-8001-ad66b85ea820">
+                                    <g class="stroke-shape">
+                                        <path rx="0" ry="0" d="M3.281,13.025C9.781,13.256,9.649,13.251,9.649,13.251L3.281,13.025Z"
+                                            style="fill: none; stroke-width: 1; stroke: rgb(0, 0, 0); stroke-opacity: 1;" />
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="shape-329ee403-f23b-80f8-8001-ad6733a49a9e">
+                                <g id="fills-329ee403-f23b-80f8-8001-ad6733a49a9e">
+                                    <path rx="0" ry="0" d="M7.785,2.884L11.403,7.374" />
+                                </g>
+                                <g id="strokes-329ee403-f23b-80f8-8001-ad6733a49a9e">
+                                    <g class="stroke-shape">
+                                        <path rx="0" ry="0" d="M7.785,2.884L11.403,7.374"
+                                            style="fill: none; stroke-width: 1; stroke: rgb(0, 0, 0); stroke-opacity: 1;" />
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    <span>9</span>
+                    <!-- <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="40"
                         height="37" id="screenshot-75652e67-c3b6-80bc-8001-a9d3a32a96f6" viewBox="-0.5 -0.5 40 37"
                         style="-webkit-print-color-adjust: exact" fill="none" version="1.1">
                         <g id="shape-75652e67-c3b6-80bc-8001-a9d3a32a96f6" rx="0" ry="0">
@@ -338,7 +423,7 @@
                                 </g>
                             </g>
                         </g>
-                    </svg>
+                    </svg> -->
                 </div>
             </div>
 

@@ -1,6 +1,27 @@
+:root {
+
+    --main-color: #ffffff;
+    --border-color: #f2f2f2; 
+     --hover-color: #f5f5f5;
+     --dark-mode-hover-color: #3d3d3d
+    --default-color: #e3e3fe;
+    --hilight-color: #4a47b1;
+    --selection-active-color: #a5d8ff;
+    --text-color: #727272;
+    --text-another-color: #6e6e6e;
+    --label-color: #b4b4b4;
+    --muted-text-color: #b8b8b8;
+    --dark-mode-color: #121212;
+}
+
+* {
+    color: var(--text-color);
+}
+
 body {
     margin: 10px;
     overflow: hidden;
+    background-color: var(--main-color);
 }
 
 nav {
@@ -14,13 +35,8 @@ nav {
 }
 
 
-
-/* .navbar {
-    height: 50px;
-} */
-
 .navbar-toggler {
-    border: 1px solid rgb(231, 231, 231);
+    border: 1px solid var(--border-color);
     height: 35px;
     width: 35px;
     padding: 12px;
@@ -30,13 +46,13 @@ nav {
 }
 
 .navbar-toggler:hover{
-    background-color: rgb(241, 239, 239);
+    background-color: var(--hover-color);
     cursor: pointer;
 }
 
 .navbar-toggler:active{
     border: none;
-    border: 2px solid grey;
+    border: 1px solid var(--hilight-color);
 }
 
 .navbar-toggler-icon {
@@ -76,6 +92,7 @@ nav {
     display: flex;
     flex-direction: row;
     border-right: 1px solid lightgrey;
+    background: transparent;
 }
 
 #lock {
@@ -89,21 +106,33 @@ nav {
 .toolbar__right {
     display: flex;
     flex-direction: row;
-    flex-grow: 1;
+    justify-content: space-evenly;
 }
 
 .tool {
    width: 35px;
    display: flex;
    align-items: center;
-   justify-content: space-around;
+   justify-content: space-evenly;
+
 }
 
 .tool:hover{
     cursor: pointer;
-    background-color: #ececec;
+    background-color: var(--hover-color);
     border-radius: 5px;
+}
 
+.tool:active{
+    border: 1px solid var(--hilight-color);
+}
+
+.tool span {
+    font-size: 10px;
+    position: relative;
+    top: 10px;
+    color: var(--muted-text-color);
+    background-color: transparent;
 }
 
 footer {
@@ -127,7 +156,7 @@ footer {
 .footer__action-zoom {
     width: fit-content;
     height: 35px;
-    border: 1px solid grey;
+    /* border: 1px solid var(--hover-color); */
     border-radius: 5px;
 }
 .footer__action-navigation span,
@@ -141,7 +170,7 @@ footer {
 .increase-zoom {
     border: none;
     height: inherit;
-    border-right: 1px solid grey;
+    border: 1px solid var(--border-color);
     background: transparent;
     outline: none;
 }
@@ -156,17 +185,28 @@ footer {
 
 .prev-page:hover,
 .increase-zoom:hover {
-    background-color: rgb(241, 239, 239);
+    background-color:  var(--hover-color);
     border-radius: 5px 0px 0px 5px;
     cursor: pointer;
+    
 }
 
 .next-page:hover,
 .decrease-zoom:hover {
-    background-color: rgb(241, 239, 239);
+    background-color:  var(--hover-color);
     border-radius: 0px 5px 5px 0px;
     cursor: pointer;
 }
+
+.next-page:active,
+.prev-page:active,
+.decrease-zoom:active,
+.increase-zoom:active {
+    border: none;
+    border: 1px solid var(--hilight-color);
+}
+
+
 
 .maincontainer {
     width: 100%;
@@ -177,7 +217,7 @@ footer {
 
 .sidetoolbar {
     margin-top: 10px;
-    width: 15%;
+    width: 16%;
     min-height: 470px;
     border-radius: 7px;
     border: 1px solid rgb(230, 228, 228);
@@ -185,7 +225,7 @@ footer {
     padding: 10px;
     box-shadow: 2px 1px 5px 3px rgb(240, 240, 240, 0.6);
     display: grid;
-    grid-template-rows: 50% 30% 20%;
+    grid-template-rows: 45% 25% 30%;
 }
 
 .sidetoolbar div:not(:last-child) {
@@ -196,7 +236,8 @@ footer {
 .social div,
 .profile div{
     border: none !important;
-    padding: 10px;
+    padding: 8px 10px;
+    border-radius: 7px;
 }
 
 .background {
@@ -230,6 +271,46 @@ footer {
     outline: none;
 }
 
+.language__selection:hover,
 .background button:hover {
     cursor: pointer;
+}
+
+.language__selection {
+    width: 100%;
+    height: 30px;
+    outline: none;
+    padding: 2px;
+    border-radius: 5px;
+    background: transparent;
+    border: 1px solid lightgrey;
+}
+
+.language__selection:focus {
+    border: 1px solid blue;
+}
+
+.sitemode{
+    height: 15px;
+    width: 90%;
+    border: none;
+    border-radius: 7px;
+    padding: 2px;
+    margin-top: 10px;
+    background: transparent;
+    z-index: 1;
+
+}
+
+
+.social div:hover,
+.profile div:hover,
+.sitemode:hover{
+    background-color:  var(--hover-color);
+    cursor: pointer;
+}
+
+.shortcut__text {
+    color: var(--muted-text-color) !important;
+    float: right;
 }
