@@ -1,9 +1,10 @@
 :root {
 
     --main-color: #ffffff;
-    --border-color: #f2f2f2; 
+    --border-color: #d6d6d6; 
      --hover-color: #f5f5f5;
      --dark-mode-hover-color: #3d3d3d
+     --dark-mode-border-color: #3d3d3d
     --default-color: #e3e3fe;
     --hilight-color: #4a47b1;
     --selection-active-color: #a5d8ff;
@@ -23,6 +24,7 @@ body {
     overflow: hidden;
     background-color: var(--main-color);
 }
+
 
 nav {
     width: 100%;
@@ -224,12 +226,12 @@ footer {
     position: absolute;
     padding: 10px;
     box-shadow: 2px 1px 5px 3px rgb(240, 240, 240, 0.6);
-    display: grid;
+    display: none;
     grid-template-rows: 45% 25% 30%;
 }
 
 .sidetoolbar div:not(:last-child) {
-    border-bottom: 1px solid lightgrey;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .settings div,
@@ -246,6 +248,7 @@ footer {
     align-items: center;
     gap: 5px;
     justify-content: center;
+    position: relative;
 }
 
 .background input {
@@ -313,4 +316,29 @@ footer {
 .shortcut__text {
     color: var(--muted-text-color) !important;
     float: right;
+}
+
+.colorPicker {
+    top: 50%;
+    left: 20%;
+    display: none;
+    gap: 5px;
+    padding: 5px !important;
+    position: absolute;
+    background-color: var(--main-color);
+    box-shadow: 2px 3px 7px 2px rgb(216, 216, 216);
+    grid-template-columns: auto auto auto auto auto;
+}
+
+.colorPicker__pad {
+    height: 20px;
+    width: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.colorPicker__pad:hover {
+    cursor: pointer;
+    border-radius: 7px;
 }
