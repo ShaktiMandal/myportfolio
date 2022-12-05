@@ -23,56 +23,56 @@
             </button>
             <div class="sidetoolbar" id="navbarToggleExternalContent">
                 <div class="profile">
-                    <div>
+                    <div class="profile__item">
                         <span id="open"></span>
                         <label for="open">Open</label>
                         <label for="open" id="open" class="shortcut__text">Ctrl+O</label>
                     </div>
-                    <div>
+                    <div class="profile__item">
                         <span id="saveTo"></span>
                         <label for="saveTo">Save to...</label>
                     </div>
-                    <div>
+                    <div class="profile__item">
                         <span id="exportImage"></span>
                         <label for="exportImage">Export image...</label>
                         <label for="exportImage" id="exportImage" class="shortcut__text">Ctrl+Shift+E</label>
                     </div>
-                    <div>
+                    <div class="profile__item">
                         <span id="collaboration"></span>
                         <label for="collaboration">Live collaboration</label>
                     </div>
-                    <div>
+                    <div class="profile__item">
                         <span id="help"></span>
                         <label for="help">help</label>
                         <label for="help" id="help" class="shortcut__text">?</label>
                         
                     </div>
-                    <div>
+                    <div class="profile__item">
                         <span id="resetCanvas"></span>
                         <label for="resetCanvas">Reset canvas</label>
                     </div>
                 </div>
                 <div class="social">
-                    <div>
+                    <div class="social__item">
                         <span id="github"></span>
                         <label for="github">Github</label>
                     </div>
-                    <div>
+                    <div class="social__item">
                         <span id="twitter"></span>
                         <label for="twitter">Twitter</label>
                     </div>
-                    <div>
+                    <div class="social__item">
                         <span id="linkedIn"></span>
                         <label for="linkedIn">LinkedIn</label>
                     </div>
                 </div>
                 <div class="settings">
-                    <div class="sitemode">
+                    <div class="sitemode settings__item">
                         <span id="modeicon"></span>
                         <label for="modeicon" id="modetext">Dark mode</label>
                         <label for="modeicon" id="modeshotcut" class="shortcut__text">Shift+Alt+D</label>
                     </div>
-                    <div class="language">
+                    <div class="language settings__item">
                         <select id="langselection" class="language__selection">
                             <option value="Afrikaans">Afrikaans</option>
                             <option value="Albanian">Albanian</option>
@@ -148,9 +148,9 @@
                             <option value="Xhosa">Xhosa</option>
                           </select>
                     </div>
-                    <div class="background">
+                    <div class="background settings__item">
                         <button id="backgroundColor"></button>
-                        <input id="inputcolor" for="backgroundColor"></input>
+                        <input id="inputcolor" for="backgroundColor" value="#"></input>
                         <div class="colorPicker">
                             <div class="colorPicker__pad"></div>
                             <div class="colorPicker__pad"></div>
@@ -469,7 +469,10 @@
             </button>
         </div>
     </nav>
-    <main class="maincontainer"></main>
+    <main class="maincontainer">
+        This is main
+
+    </main>
     <footer class="footercontainer">
         <div class="footer__action">
             <div class="footer__action-zoom">
@@ -478,7 +481,7 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span> + </span>
                 </button>
-                <span> 100% </span>
+                <span class="zoom">100</span>%
                 <button class="decrease-zoom" type="button" data-toggle="collapse"
                     data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
                     aria-expanded="false" aria-label="Toggle navigation">

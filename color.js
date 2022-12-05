@@ -15,22 +15,40 @@ const colors = {
 }
 
 const colorPad = {
-    'white' : '#ffffff',           
-    'gray'  : '#F8F9FA',         
-    'gray'  : '#F1F3F5',         
-    'red'   : '#FFF5F5',           
-    'pink'  : '#FFF0F6',          
-    'grape' : '#F8F0FC',           
-    'violet': '#F3F0FF',           
-    'indigo': '#EDF2FF',           
-    'blue'  : '#E7F5FF',          
-    'cyan'  : '#E3FAFC',           
-    'teal'  : '#E6FCF5',           
-    'green' : '#EBFBEE',          
-    'lime'  : '#F4FCE3',           
-    'yellow': '#FFF9DB',          
+    'White' : '#ffffff',           
+    'Gray0'  : '#F8F9FA',         
+    'Gray1'  : '#F1F3F5',         
+    'Red'   : '#FFF5F5',           
+    'Pink'  : '#FFF0F6',          
+    'Grape' : '#F8F0FC',           
+    'Violet': '#F3F0FF',           
+    'Indigo': '#EDF2FF',           
+    'Blue'  : '#E7F5FF',          
+    'Cyan'  : '#E3FAFC',           
+    'Teal'  : '#E6FCF5',           
+    'Green' : '#EBFBEE',          
+    'Lime'  : '#F4FCE3',           
+    'Yellow': '#FFF9DB',          
     'Orange': '#FFF4E6',          
 }
 
-export { colors, colorPad };
+const colorsWithDarkMode = {
+    'darkWithWhite' : '#121212',           
+    'darkWithGray0' : '#161718',         
+    'darkWithGray1' : '#1b1d1e',         
+    'darkWithRed'   : '#1F1717',           
+    'darkWithPink'  : '#25191E',          
+    'darkWithGrape' : '#211A25',           
+    'darkWithViolet': '#1E1C29',           
+    'darkWithIndigo': '#191D28',           
+    'darkWithBlue'  : '#121E27',          
+    'darkWithCyan'  : '#0B1E20',           
+    'darkWithTeal'  : '#0A1D17',           
+    'darkWithGreen' : '#0F1D12',          
+    'darkWithLime'  : '#141A05',           
+    'darkWithYellow': '#1E1900',          
+    'darkWithOrange': '#22190D',      
+}
+
+export { colors, colorPad, colorsWithDarkMode };
 

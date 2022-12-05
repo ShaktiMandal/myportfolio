@@ -13,6 +13,7 @@
     --label-color: #b4b4b4;
     --muted-text-color: #b8b8b8;
     --dark-mode-color: #121212;
+    --default-font-size: 16px;
 }
 
 * {
@@ -22,7 +23,9 @@
 body {
     margin: 10px;
     overflow: hidden;
+    font-size: var(--default-font-size);
     background-color: var(--main-color);
+    font-family: Assistant,system-ui,BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
 }
 
 
@@ -84,6 +87,7 @@ nav {
     display: grid;
     grid-template-columns: 12% 88%;
     column-gap: 5px;
+    font-size: 13px !important;
 }
 
 .toolbar:nth-child(odd) {
@@ -144,6 +148,8 @@ footer {
     align-items: center;
     position: sticky;
     bottom: 10px;
+    font-size: 13px !important;
+
 }
 
 .footer__action {
@@ -152,27 +158,40 @@ footer {
     align-items: center;
     justify-content: flex-start;
     gap: 10px;
+    border-radius: 7px;
 }
 
 .footer__action-navigation,
 .footer__action-zoom {
     width: fit-content;
     height: 35px;
-    /* border: 1px solid var(--hover-color); */
+    border: 1px solid var(--border-color);
     border-radius: 5px;
+  
 }
 .footer__action-navigation span,
 .footer__action-zoom span {
     padding: 0px 10px;
     font-size: 15px;
+ 
 }
 
 .prev-page,
-.next-page,
+.next-page {
+    border: none;
+    height: inherit;
+    background: transparent;
+    outline: none;
+}
+
+.prev-page {
+    border-right: 1px solid var(--border-color);
+}
+
 .increase-zoom {
     border: none;
     height: inherit;
-    border: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
     background: transparent;
     outline: none;
 }
@@ -180,7 +199,7 @@ footer {
 .decrease-zoom {
     border: none;
     height: inherit;
-    border-left: 1px solid grey;
+    border-left: 1px solid var(--border-color);
     background: transparent;
     outline: none;
 }
@@ -188,7 +207,6 @@ footer {
 .prev-page:hover,
 .increase-zoom:hover {
     background-color:  var(--hover-color);
-    border-radius: 5px 0px 0px 5px;
     cursor: pointer;
     
 }
@@ -196,15 +214,21 @@ footer {
 .next-page:hover,
 .decrease-zoom:hover {
     background-color:  var(--hover-color);
-    border-radius: 0px 5px 5px 0px;
     cursor: pointer;
 }
 
-.next-page:active,
+
 .prev-page:active,
-.decrease-zoom:active,
 .increase-zoom:active {
     border: none;
+    border-radius: 5px 0px 0px 5px;
+    border: 1px solid var(--hilight-color);
+
+}
+.next-page:active,
+.decrease-zoom:active {
+    border: none;
+    border-radius: 0px 5px 5px 0px;
     border: 1px solid var(--hilight-color);
 }
 
@@ -215,6 +239,9 @@ footer {
     min-height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
+    position: absolute;
+    top: 50px;
+    left: 50px;
 }
 
 .sidetoolbar {
@@ -228,15 +255,16 @@ footer {
     box-shadow: 2px 1px 5px 3px rgb(240, 240, 240, 0.6);
     display: none;
     grid-template-rows: 45% 25% 30%;
+    font-size: 13px !important;
 }
 
-.sidetoolbar div:not(:last-child) {
+.sidetoolbar > div:not(:last-child) {
     border-bottom: 1px solid var(--border-color);
 }
 
-.settings div,
-.social div,
-.profile div{
+.settings > div,
+.social__item,
+.profile__item {
     border: none !important;
     padding: 8px 10px;
     border-radius: 7px;
@@ -302,12 +330,11 @@ footer {
     margin-top: 10px;
     background: transparent;
     z-index: 1;
-
 }
 
 
-.social div:hover,
-.profile div:hover,
+.social__item:hover,
+.profile__item:hover,
 .sitemode:hover{
     background-color:  var(--hover-color);
     cursor: pointer;
@@ -322,8 +349,10 @@ footer {
     top: 50%;
     left: 20%;
     display: none;
-    gap: 5px;
-    padding: 5px !important;
+    gap: 3px;
+    width: 90%;
+    border-radius: 7px;
+    padding: 10px !important;
     position: absolute;
     background-color: var(--main-color);
     box-shadow: 2px 3px 7px 2px rgb(216, 216, 216);
@@ -331,14 +360,20 @@ footer {
 }
 
 .colorPicker__pad {
-    height: 20px;
-    width: 15px;
+    height: 35px;
+    width: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 7px;
 }
 
 .colorPicker__pad:hover {
     cursor: pointer;
-    border-radius: 7px;
 }
+
+.colorPicker__pad-active{
+    border: 1px solid var(--hilight-color) !important;
+}
+
+
