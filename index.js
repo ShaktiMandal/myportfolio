@@ -26,6 +26,35 @@ window.onload = function() {
     const increaseZoomElement = document.getElementsByClassName('increase-zoom')[0];
     const decreaseZoomElement = document.getElementsByClassName('decrease-zoom')[0];
     const incrementSpanValue = document.getElementsByClassName('zoom')[0];
+    const rolesElement = document.getElementsByClassName('roles')[0];
+
+    let currentIndex = 0;
+    // Add animation to display roles
+    // const displayRolesAnimation = () => {
+    //     if (rolesElement) {            
+    //         const childrens = rolesElement.children; 
+            
+    //         if( currentIndex === childrens.length)
+    //         {
+    //             for(let index = 0; index < childrens.length; index++) {
+    //                 childrens[index].style.marginTop = "";
+    //             }
+    //         }
+            
+    //         currentIndex++;
+    //         if (currentIndex > childrens.length) {
+    //                 currentIndex = 1;  
+    //         }
+
+    //         childrens[currentIndex - 1].style.marginTop = "-200px";
+        
+    //     }
+        
+    //     setTimeout(displayRolesAnimation, 1000);
+    // }
+
+    // displayRolesAnimation();
+    
 
     const updateFontSize = (isIncrement) => {
         const currentBodyFontSize = getComputedStyle(body);
