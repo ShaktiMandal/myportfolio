@@ -28,33 +28,24 @@ window.onload = function() {
     const incrementSpanValue = document.getElementsByClassName('zoom')[0];
     const rolesElement = document.getElementsByClassName('roles')[0];
 
-    let currentIndex = 0;
-    // Add animation to display roles
-    // const displayRolesAnimation = () => {
-    //     if (rolesElement) {            
-    //         const childrens = rolesElement.children; 
-            
-    //         if( currentIndex === childrens.length)
-    //         {
-    //             for(let index = 0; index < childrens.length; index++) {
-    //                 childrens[index].style.marginTop = "";
-    //             }
-    //         }
-            
-    //         currentIndex++;
-    //         if (currentIndex > childrens.length) {
-    //                 currentIndex = 1;  
-    //         }
+    // Add animation for home section
 
-    //         childrens[currentIndex - 1].style.marginTop = "-200px";
+    const io = new IntersectionObserver((entries, observer)=>{
+        entries.forEach( entry => {
+            const profileElement = document.getElementsByClassName('profile-pic')[0];
+            const descriptionElement = document.getElementsByClassName('description')[0];
+            if (entry.isIntersecting) {
+                profileElement.classList.add('profile__pic-animation');
+                descriptionElement.classList.add('description__animation');
+            } else {
+                profileElement.classList.remove('profile__pic-animation');
+                descriptionElement.classList.remove('description__animation');
+            }
+        })
         
-    //     }
-        
-    //     setTimeout(displayRolesAnimation, 1000);
-    // }
+    }, { threshold: 1});
 
-    // displayRolesAnimation();
-    
+    io.observe(document.getElementsByClassName('about__first-section')[0]);
 
     const updateFontSize = (isIncrement) => {
         const currentBodyFontSize = getComputedStyle(body);
@@ -147,6 +138,7 @@ window.onload = function() {
           ) {
             root.style.setProperty('--hover-color', colors['--hover-color']);
             root.style.setProperty('--border-color', colors['--border-color']);
+            root.style.setProperty('--text-color', colors['--text-color']);
             sideToolbarElement.style.backgroundColor = colors['--main-color'];
             toolbarElement.style.backgroundColor = colors['--main-color'];
             toggleBtnElement.style.backgroundColor = colors['--main-color'];
@@ -158,6 +150,7 @@ window.onload = function() {
         if ((selectedBgColor && isDarkModeSelected) || ( selectedBgColor === '' && isDarkModeSelected)) {
             root.style.setProperty('--hover-color', colors['--dark-mode-hover-color']);
             root.style.setProperty('--border-color', colors['--dark-mode-border-color']);
+            root.style.setProperty('--text-color', colors['--dark-mode-text-color']);
             colorPicker.style.backgroundColor = colors['--dark-mode-border-color'];
             sideToolbarElement.style.backgroundColor = colors['--dark-mode-color'];
             toggleBtnElement.style.backgroundColor = colors['--dark-mode-color'];
