@@ -24,35 +24,72 @@ window.onload = function () {
   const footerNavigation = document.getElementsByClassName(
     "footer__action-navigation"
   )[0];
+  const popout = document.getElementsByClassName('popout__logo');
+  const modalPopUp = document.getElementsByClassName('modal-popup')[0];
   const increaseZoomElement =
     document.getElementsByClassName("increase-zoom")[0];
   const decreaseZoomElement =
     document.getElementsByClassName("decrease-zoom")[0];
   const incrementSpanValue = document.getElementsByClassName("zoom")[0];
   const rolesElement = document.getElementsByClassName("roles")[0];
+  const modalCloseBtn = document.getElementsByClassName('modal__close-btn')[0];
+  const projectImgContainer = document.getElementsByClassName('image-container')[0];
+
+    // Animate project section 
+
+    // (function infiniteSlidingProjectImg() {
+    //   if (projectImgContainer) {
+    //     let currentChildIndex = 0;
+    //     const childrens = projectImgContainer.children;
+    //     console.log("Image interval", childrens);
+    //     if (childrens.length) {
+    //       // Object.values(childrens).forEach( (child, index) => {
+
+    //       // });
+    //       console.log("Image interval");
+    //     const timeInterval =setInterval(() => {
+    //         if ( currentChildIndex > childrens.length - 2) {
+    //           for(let index = 0; index < childrens.length; index++) {
+    //             childrens[currentChildIndex - 1].style.marginLeft = "0px";
+    //             currentChildIndex = currentChildIndex -1;
+    //           }
+    //         } else {
+
+    //           childrens[currentChildIndex].style.marginLeft = "-1000px";
+    //           currentChildIndex++;
+    //         }
+    //       }, 2000)
+    //     }
+    //   }
+    // })();
+
+
+  // Instantiate scroll 
+  // const s = skrollr.init();
+
 
   // Add animation for home section
 
-  const io = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        const profileElement =
-          document.getElementsByClassName("profile-pic")[0];
-        const descriptionElement =
-          document.getElementsByClassName("description")[0];
-        if (entry.isIntersecting) {
-          profileElement.classList.add("profile__pic-animation");
-          descriptionElement.classList.add("description__animation");
-        } else {
-          profileElement.classList.remove("profile__pic-animation");
-          descriptionElement.classList.remove("description__animation");
-        }
-      });
-    },
-    { threshold: 0.32 }
-  );
+  // const io = new IntersectionObserver(
+  //   (entries) => {
+  //     entries.forEach((entry) => {
+  //       const profileElement =
+  //         document.getElementsByClassName("profile-pic")[0];
+  //       const descriptionElement =
+  //         document.getElementsByClassName("description")[0];
+  //       if (entry.isIntersecting) {
+  //         profileElement.classList.add("profile__pic-animation");
+  //         descriptionElement.classList.add("description__animation");
+  //       } else {
+  //         profileElement.classList.remove("profile__pic-animation");
+  //         descriptionElement.classList.remove("description__animation");
+  //       }
+  //     });
+  //   },
+  //   { threshold: 1 }
+  // );
 
-  io.observe(document.getElementsByClassName("first__section-content")[0]);
+  // io.observe(document.getElementsByClassName("first__section-content")[0]);
 
   const updateFontSize = (isIncrement) => {
     const currentBodyFontSize = getComputedStyle(body);
@@ -85,6 +122,34 @@ window.onload = function () {
     updateFontSize(false);
   };
 
+  const onOpenModal = (event) => {
+    event.stopPropagation();
+    if (modalPopUp.style.display === "grid") {
+      modalPopUp.style.display ="none";
+    } else  {
+      modalPopUp.style.display ="grid"
+    } 
+  }
+
+
+  body.addEventListener('click', (event) => {
+    onCloseModal(event);
+  })
+
+  const onCloseModal = (event) => {
+    event.stopPropagation();
+    if( event.target.id === "modal-popup-id") {
+      return;
+    }
+    if (modalPopUp.style.display === "grid") {
+      modalPopUp.style.display ="none";
+    }
+  }
+
+  Object.values(popout).forEach( (element, index) => {
+    element.addEventListener('click', onOpenModal);
+  })
+  modalCloseBtn.addEventListener('click', onCloseModal);
   increaseZoomElement.addEventListener("click", onIncreaseFontSize);
   decreaseZoomElement.addEventListener("click", onDecreaseFontSize);
 

@@ -12,7 +12,8 @@ const colors = {
     "--dark-mode-border-color": "#3d3d3d",
     "--text-color": "#727272",
     "--text-another-color": "#6e6e6e",
-    "--dark-mode-text-color": "#b8b8b8"
+    "--dark-mode-text-color": "#b8b8b8",
+    "--overlay-color": "#D0D0D0"
 }
 
 const colorPad = {
