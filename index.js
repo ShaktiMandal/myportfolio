@@ -41,24 +41,23 @@ window.onload = function () {
     //   if (projectImgContainer) {
     //     let currentChildIndex = 0;
     //     const childrens = projectImgContainer.children;
-    //     console.log("Image interval", childrens);
     //     if (childrens.length) {
-    //       // Object.values(childrens).forEach( (child, index) => {
-
-    //       // });
-    //       console.log("Image interval");
     //     const timeInterval =setInterval(() => {
-    //         if ( currentChildIndex > childrens.length - 2) {
-    //           for(let index = 0; index < childrens.length; index++) {
-    //             childrens[currentChildIndex - 1].style.marginLeft = "0px";
+ 
+    //         if ( currentChildIndex > childrens.length -1) {
+              
+    //           for(let index = childrens.length - 1; index >= 0; index--) {
+    //             console.log("Image interval", currentChildIndex);
+    //             childrens[index].style.marginLeft = "0px";
     //             currentChildIndex = currentChildIndex -1;
+              
     //           }
     //         } else {
-
+    //           console.log("Image interval", currentChildIndex);
     //           childrens[currentChildIndex].style.marginLeft = "-1000px";
     //           currentChildIndex++;
     //         }
-    //       }, 2000)
+    //       }, 2000 )
     //     }
     //   }
     // })();
