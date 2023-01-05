@@ -1,12 +1,17 @@
 import { colors, colorPad, colorsWithDarkMode } from "./color.js";
+import { projectSnapshots } from "./utils.js";
 
 window.onload = function () {
   "use strict";
 
   // Initialize global variables
-
+  
+  let wordCount = 0;
   let selectedBgColor = "";
+  let textCurrentIndex = 0;
+  let selectedImgIndex = -1;
   let isDarkModeSelected = false;
+  const wordList = `Since beginning my journey as a freelance developer nearly 10 years ago, I’ve done remote work for agencies, consulted for startups, and collaborated with talented people to create web products for both business and consumer use. I create successful responsive websites that are fast, easy to use, and built with best practices. The main area of my expertise is front-end development, HTML, CSS, JS, building small and medium web apps, custom plugins, features, animations, and coding interactive layouts. I also have full-stack developer experience with popular open-source CMS like (WordPress, Drupal, Magento, Keystone.js and others) .`
 
   // Initialize
   const toggleBtnElement = document.getElementsByClassName("navbar-toggler")[0];
@@ -34,6 +39,9 @@ window.onload = function () {
   const rolesElement = document.getElementsByClassName("roles")[0];
   const modalCloseBtn = document.getElementsByClassName('modal__close-btn')[0];
   const projectImgContainer = document.getElementsByClassName('image-container')[0];
+  const skillText = document.getElementsByClassName('skills__experience')[0];
+  const displayProjectList = document.getElementsByClassName('display__imglist')[0];
+  const displayModal = document.getElementsByClassName('display__modal')[0];
 
     // Animate project section 
 
@@ -89,6 +97,158 @@ window.onload = function () {
   // );
 
   // io.observe(document.getElementsByClassName("first__section-content")[0]);
+
+  // Skill section animation start
+// const setCurentIndex = (event, index) => {
+//   selectedImgIndex = index;
+// }
+
+  const TypingAnimation = (wordList) => {
+    const animatedTyping = () => {
+      let currentText = "";
+      if (wordList.length > wordCount) {
+        currentText = wordList[wordCount];
+        if (wordCount > 0) {
+          let temp = "";
+          for (let index = 0; index < wordCount; index++) {
+            if (wordList[index].charCodeAt(0) === 9) {
+              temp = temp + wordList[index];
+            }
+            if (wordList[index].charCodeAt(0) === 10) {
+              temp = temp + "\n";
+            }
+
+            if (wordList[index].charCodeAt(0) === 32) {
+              temp = temp + " ";
+            }
+
+            if (wordList[index].charCodeAt(0) === 13) {
+              temp = temp + "\n";
+            } else {
+              temp = temp + wordList[index];
+            }
+          }
+
+          if (currentText.charCodeAt(0) === 9) {
+            temp = temp + currentText;
+          }
+          if (currentText.charCodeAt(0) === 10) {
+            temp = temp + "\n";
+          }
+
+          if (currentText.charCodeAt(0) === 32) {
+            temp = temp + " ";
+          }
+
+          if (currentText.charCodeAt(0) === 13) {
+            temp = temp + "\n";
+          } else {
+            currentText = temp + " " + currentText;
+          }
+        }
+
+        if (skillText) {
+          skillText.innerText = currentText;
+        }
+        textCurrentIndex = textCurrentIndex + 1;
+        wordCount = wordCount + 1;
+        requestAnimationFrame(animatedTyping);
+      } else {
+        wordCount = 0;
+      }
+    };
+
+    requestAnimationFrame(animatedTyping);
+  };
+
+  TypingAnimation(wordList)
+  
+  // Skill section animation end
+
+  // Project section start
+  const InitializeProjects = () => {
+    if (projectImgContainer) {
+
+      projectSnapshots.forEach( (proj,index) => {
+        const divElement = document.createElement('div');
+
+        divElement.addEventListener('click', () => {
+          //Formation of modal on user click
+          selectedImgIndex = index;
+          createAndAppendImgElement();
+        })
+        divElement.className = "img";
+        divElement.setAttribute('key', index.toString());
+
+        const imageElement = document.createElement('img');
+        imageElement.src = proj;
+        imageElement.className = "img__style";
+
+        const overlayDiv = document.createElement('div');
+        overlayDiv.className = "overlay";
+
+        divElement.appendChild(imageElement);
+        divElement.appendChild(overlayDiv);
+
+        projectImgContainer.appendChild(divElement);
+      })
+    }
+
+    // Load snapshot of project list
+    if (displayProjectList) {
+
+      projectSnapshots.forEach((snapshot, index) => {
+        const divElement = document.createElement('div');
+        divElement.setAttribute('key', index.toString());
+        divElement.addEventListener('click', ()=>{
+          event.stopPropagation();
+          selectedImgIndex = -1;
+          
+        });
+
+        const selectedImgElement = document.createElement('img');
+        selectedImgElement.alt = 'Selected Image';
+        selectedImgElement.src = snapshot;
+        selectedImgElement.addEventListener('click', () => {
+          selectedImgIndex = index;
+          createAndAppendImgElement();
+        })
+        selectedImgElement.className = index === selectedImgIndex ? "img__style-tile1" : "img__style-tile";
+
+        divElement.appendChild(selectedImgElement);
+        displayProjectList.appendChild(divElement);
+      })
+    }
+
+    // Create dynamic img element and append to modal
+    const createAndAppendImgElement = () => {
+      if( document.getElementsByClassName('modal__img')[0] ) {
+        displayModal.removeChild(document.getElementsByClassName('modal__img')[0])
+      }
+      // Add image element on the modal
+      const imgElement = document.createElement('img');
+      imgElement.src = projectSnapshots[selectedImgIndex];
+      imgElement.alt = "Display Image";
+      imgElement.className = "modal__img";
+      displayModal.appendChild(imgElement);
+  
+      // Display Modal if there is a selected project
+      displayModal.style.display = selectedImgIndex !== -1 ? 'flex' : 'none';
+    }
+
+    // Load Modal
+    if (displayModal) {
+        displayModal.addEventListener('click', () => {
+          selectedImgIndex = -1;
+          displayModal.style.display = selectedImgIndex !== -1 ? 'flex' : 'none';
+        });
+    }
+  }
+
+  
+
+  InitializeProjects();
+  // Project section end
 
   const updateFontSize = (isIncrement) => {
     const currentBodyFontSize = getComputedStyle(body);
